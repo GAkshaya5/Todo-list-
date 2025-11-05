@@ -1,0 +1,91 @@
+/* Modernized styling for the Todo List */
+:root{
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --accent: #4f46e5; /* indigo-600 */
+    --accent-dark: #4338ca;
+    --muted: #6b7280;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+    color:#111827;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 16px;
+}
+.container{
+    width:100%;
+    max-width:720px;
+    background:var(--card);
+    border-radius:14px;
+    box-shadow:0 10px 30px rgba(16,24,40,0.08);
+    overflow:hidden;
+}
+header{
+    background:linear-gradient(90deg, rgba(79,70,229,0.95), rgba(67,56,202,0.95));
+    color:white;
+    padding:20px 24px;
+}
+header h1{
+    margin:0;
+    font-size:20px;
+    letter-spacing:0.2px;
+}
+main{
+    padding:22px;
+}
+.empty-message{ color:var(--muted); text-align:center; font-style:italic; margin:12px 0; }
+form{
+    display:flex;
+    gap:8px;
+    margin-top:14px;
+}
+input[type="text"]{
+    flex:1;
+    padding:12px 14px;
+    border:1px solid rgba(15,23,42,0.06);
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+    transition:box-shadow .15s, border-color .15s;
+}
+input[type="text"]:focus{ box-shadow:0 4px 14px rgba(79,70,229,0.12); border-color:var(--accent-dark); }
+button{
+    background:var(--accent);
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    transition:transform .08s ease, box-shadow .08s ease;
+}
+button:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(79,70,229,0.18); }
+ul{ list-style:none; padding:0; margin:8px 0 0 0; display:flex; flex-direction:column; gap:10px; }
+li{
+    background:linear-gradient(180deg,#ffffff,#fbfdff);
+    padding:12px 14px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 4px 14px rgba(2,6,23,0.04);
+    border-left:4px solid rgba(79,70,229,0.10);
+    font-size:15px;
+}
+li small{ color:var(--muted); }
+footer{ padding:14px 18px; text-align:center; color:var(--muted); font-size:13px; background:transparent; }
+
+@media (max-width:520px){
+    .container{ border-radius:10px; }
+    header h1{ font-size:18px }
+    button{ padding:10px 12px }
+}
+
+/* Utility */
+.muted{ color:var(--muted); font-size:13px }
