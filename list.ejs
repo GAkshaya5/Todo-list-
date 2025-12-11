@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+        </header>
+
+        <main>
+            <% if (newListItems && newListItems.length) { %>
+                <ul>
+                    <% newListItems.forEach(function(item){ %>
+                        <li><%= item %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p class="empty-message">No todo items yet. Add one below.</p>
+            <% } %>
+
+            <form action="/" method="post">
+                <input type="text" name="newItem" placeholder="New Item" required>
+                <button type="submit">+</button>
+            </form>
+        </main>
+
+        
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
